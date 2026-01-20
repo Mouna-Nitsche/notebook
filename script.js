@@ -1,21 +1,22 @@
 /*
-Alles in Englisch in jedem öffentlichem Projekt
+Everything in English in every public project
 
-User Story 
-Was soll machbar sein? Was will ein User machen?
-Welche Grundfunktionen soll es geben?
+User Story:
+What should be possible? What will a user do?
 
-Notizen anzeigen
-Ich brauche Notizen 
-let notes = [];
+What basic functions should be available?
 
-Ich muss definieren wo sie anzuzeigen sind
---> wann werden sie angezeigt?
+Display notes
+I need notes
+let Notes = [];
 
-notizen hinzufügen
-notizen lösen
-notizen archivieren
-global speichern 
+I need to define where they are
+--> when they are displayed?
+
+Add notes
+Remove notes
+Archive notes
+Save globally
 
 */
 
@@ -38,13 +39,15 @@ function getNoteTemplate(note) {
     return `<p>+ ${note}</p>`;
 }
 
-//Notizen hinzufügen
+//Add notes
 function addNote() {
+    //Save input / Add to notes
+    //Display input
     let noteInputRef = document.getElementById("note_inpute");
     let noteInput = noteInputRef.value;
 
     notes.push(noteInput);
     renderNotes();
-    //eingabe speichern / den Notizen hinzufügen
-    //eingabe anzeigen lassen
+
+    noteInputRef.value = "";
 }
