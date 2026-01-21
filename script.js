@@ -51,10 +51,14 @@ function addNote() {
     noteInputRef.value = "";
 }
 
-//welche Notiz muss gelöscht werden
-//wann löschen
-//beim button durücken, löschen
-//anzeige Updaten
+//Delete Button:
+//note needs to be deleted?
+
+//When to delete? ->
+
+//Press the button to delete.
+
+//Update display
 
 function deleteNote(indexNote) {
     notes.splice(indexNote, 1);
