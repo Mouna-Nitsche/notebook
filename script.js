@@ -29,25 +29,34 @@ function renderNotes() {
     contentRef.innerHTML = "";
 
     for (let indexNote = 0; indexNote < notes.length; indexNote++) {
-        const note = notes[indexNote];
-        contentRef.innerHTML += getNoteTemplate(note);
+        contentRef.innerHTML += getNoteTemplate(indexNote);
     }
 }
 //when to render/display? onload at the start
 
-function getNoteTemplate(note) {
-    return `<p>+ ${note}</p>`;
+function getNoteTemplate(indexNote) {
+    return `<p>+ ${notes[indexNote]} <button onclick="deleteNote(${indexNote})">x</button></p>`;
 }
 
 //Add notes
 function addNote() {
     //Save input / Add to notes
     //Display input
-    let noteInputRef = document.getElementById("note_inpute");
+    let noteInputRef = document.getElementById("note_input");
     let noteInput = noteInputRef.value;
 
     notes.push(noteInput);
     renderNotes();
 
     noteInputRef.value = "";
+}
+
+//welche Notiz muss gelöscht werden
+//wann löschen
+//beim button durücken, löschen
+//anzeige Updaten
+
+function deleteNote(indexNote) {
+    notes.splice(indexNote, 1);
+    renderNotes();
 }
